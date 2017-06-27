@@ -116,47 +116,112 @@ This was augmented by studying the [Alexnet image processing architecture](https
 
 Training set accuracy shows that the model is fitting to the training data well; perhaps too well, as a 97% accuracy is quite high. Luckily, the difference in performance between the validation and training sets (delta of 3.3%) shows that the model is not overfitting too greatly, which is good. Test set accuracy of 90.5% indicates that on completely unseen data in the real world, this classifier would classify slightly better than nine of out ten traffic signs correctly, which is interesting academically but surely would be a problem for a true self-driving car (an incorrectly classified traffic sign could prove disasterous).
 
-###Test a Model on New Images
+### Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+**Priority Road**
 
-The first image might be difficult to classify because ...
+![Priority Road](testdata/12.jpg)
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+This is likely to be a simple image to classify; it is clear with an empty background.
+
+**General Caution**
+
+![General Caution](testdata/18.jpg)
+
+This image may be harder to classify, as it has a changing background image due to the horizon.
+
+**Bumpy Road**
+
+![Bumpy Road](testdata/22.jpg)
+
+This image has a solid, though black, background which is likely to be easy to classify (even with a small fleck of black in the right side of the triangle).
+
+**Road Work**
+
+![Road Work](testdata/25.jpg)
+
+This image is likely to be difficult to classify, being captured at a non-perpendicular angle, as well as having a complicated background involving the ground, sky, and clouds of different colors and shapes.
+
+**Keep Right**
+
+![Keep Right](testdata/38.jpg)
+
+This image should be relatively easy to classify; it has some background noise but the image itself is clear except for some clipping at the bottom of the circle.
+
+
+#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set.
 
 Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| General Caution    	| General Caution								| 
+| Priority Road     	| Priority Road 								|
+| Bumpy Road			| Bicycles Crossing					     		|
+| Road Work	      		| Road Work					 			    	|
+| Keep Right			| Keep Right      						     	|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. Due to the limited number of test examples in my set of 5, the accuracy of 80% is lower than the original test set accuracy of 90.5%.
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability.
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in one of the last cells of the Ipython notebook.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model is most sure that this is a General Caution sign (probability of 0.25), and the image does contain a General Caution sign. The top five soft max probabilities were
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .25         			| General Caution   							|
+| .20     				| Pedestrians  				            	   |
+| .18					| Traffic Signals								|
+| .14	      			| Road Narrows on the Right		 				|
+| .13				    | Right-of-way at the next intersection			|
 
 
-For the second image ... 
+For the second image, the model is most sure that this is a General Caution sign (probability of 0.10), and the image does contain a stop sign. The top five soft max probabilities were
+
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .10         			| Priority Road   			  		      		|
+| .06     				| Yield 								        |
+| .06					| No Vehicles						       		|
+| .05	      			| No Passing		 			               	|
+| .04				    | Ahead Only		                         	|
+
+For the third image, the model is relatively sure that this is a Bicycles Crossing sign (probability of 0.15); however, the image contains a Bumpy Road sign. Note that Bumpy Road is the second highest softmax probability. The top five soft max probabilities were
+
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .15         			| Bicycles Crossing   							|
+| .11     				| Bumpy Road 								    |
+| .11					| Dangerous Curve to the right					|
+| .09	      			| Road narrows on the right		 				|
+| .09				    | Road work			                             |
+
+For the fourth image, the model is relatively sure that this is a Road Work sign (probability of 0.22), and the image does contain a Road work sign. The top five soft max probabilities were
+
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .22         			| Road work   						           	|
+| .16     				| Bumpy road 								    |
+| .12					| Bicycle crossing								|
+| .10	      			| Road Narrows on the Right		 				|
+| .09				    | Slippery Road                            		|
+
+For the fifth image, the model is most sure that this is a Keep Right sign (probability of 0.12), and the image does contain a Keep Right sign. The top five soft max probabilities were
+
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .12         			| Keep Right   						          	|
+| .12     				| Speed Limit (30km/h) 						    |
+| .11					| Roundabout Manadatory							|
+| .07	      			| Speed Limit (50km/h)		 			     	|
+| .07				    | Priority Road                        			|
+
 
 

@@ -11934,7 +11934,7 @@ Number of classes = 43
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Data exploration visualization code goes here.</span>
@@ -11950,7 +11950,7 @@ Number of classes = 43
 <span class="c1"># find one instance of each class of sign in the training dataset and visualize</span>
 <span class="k">for</span> <span class="n">clazz</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">y_train</span><span class="p">):</span>
     <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">y_train</span> <span class="o">==</span> <span class="n">clazz</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">signnames</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">signnames</span><span class="p">[</span><span class="s1">&#39;ClassId&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">clazz</span><span class="p">][</span><span class="s1">&#39;SignName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">clazz</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">clazz</span><span class="p">,</span> <span class="n">signnames</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">signnames</span><span class="p">[</span><span class="s1">&#39;ClassId&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">clazz</span><span class="p">][</span><span class="s1">&#39;SignName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">clazz</span><span class="p">)))</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -11983,7 +11983,7 @@ Number of classes = 43
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Speed limit (20km/h)
+<pre>0: Speed limit (20km/h)
 </pre>
 </div>
 </div>
@@ -12082,7 +12082,7 @@ pDazE6Q2sxOkNrMTpDazE6Q2sxOkNrMTpP8FIhMt60NY1y8AAAAASUVORK5CYII=
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Speed limit (30km/h)
+<pre>1: Speed limit (30km/h)
 </pre>
 </div>
 </div>
@@ -12170,7 +12170,7 @@ q+SzH2ev7ZXpUUjdT4jIR6gq79+AX7lJJ6cIckU6RZAr0onZK9KJ2SvSidkr0onZK9KJ2SvSidkr
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Speed limit (50km/h)
+<pre>2: Speed limit (50km/h)
 </pre>
 </div>
 </div>
@@ -12266,7 +12266,7 @@ mjO7Qfp/tosLyWzl6+MAAAAASUVORK5CYII=
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Speed limit (60km/h)
+<pre>3: Speed limit (60km/h)
 </pre>
 </div>
 </div>
@@ -12340,7 +12340,7 @@ K2IUdkWMwq6IUdgVMQq7IkZhV8Qo7IoYhV0R/wfJRXo98NqeKAAAAABJRU5ErkJggg==
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Speed limit (70km/h)
+<pre>4: Speed limit (70km/h)
 </pre>
 </div>
 </div>
@@ -12428,7 +12428,7 @@ AElFTkSuQmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Speed limit (80km/h)
+<pre>5: Speed limit (80km/h)
 </pre>
 </div>
 </div>
@@ -12507,7 +12507,7 @@ pJHZBel/l8LM32AW/+oAAAAASUVORK5CYII=
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>End of speed limit (80km/h)
+<pre>6: End of speed limit (80km/h)
 </pre>
 </div>
 </div>
@@ -12588,7 +12588,7 @@ Rjoxe0Y6MXtGOjF7Rjoxe0b6P9sWBddvb50EAAAAAElFTkSuQmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Speed limit (100km/h)
+<pre>7: Speed limit (100km/h)
 </pre>
 </div>
 </div>
@@ -12673,7 +12673,7 @@ LDzIDrEgdodYELtDLIjdIRbE7hALYneIBbE7xILYHeL/AfjfMHm7WX/0AAAAAElFTkSuQmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Speed limit (120km/h)
+<pre>8: Speed limit (120km/h)
 </pre>
 </div>
 </div>
@@ -12756,7 +12756,7 @@ JmaPSBOzR6SJ2SPSxOwRaWL2iPQbAenIPV/fm9QAAAAASUVORK5CYII=
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>No passing
+<pre>9: No passing
 </pre>
 </div>
 </div>
@@ -12861,7 +12861,7 @@ E6RBBJkgDZidIA2YnSANmJ0gDZidIA2YnSANmJ0gDZidIP0fjTsYaG0kYksAAAAASUVORK5CYII=
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>No passing for vehicles over 3.5 metric tons
+<pre>10: No passing for vehicles over 3.5 metric tons
 </pre>
 </div>
 </div>
@@ -12945,7 +12945,7 @@ Szct+B+K2Rfl+l84M2i9Uhf4U+CngE9gNepfvMnzh2L2Nb+1PRxdVKmrqj9W1VatsvLPMHF4bRqK
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Right-of-way at the next intersection
+<pre>11: Right-of-way at the next intersection
 </pre>
 </div>
 </div>
@@ -13029,7 +13029,7 @@ UbpInGM3vgAAAABJRU5ErkJggg==
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Priority road
+<pre>12: Priority road
 </pre>
 </div>
 </div>
@@ -13130,7 +13130,7 @@ SENml0j/B2xPIvuz4sBzAAAAAElFTkSuQmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Yield
+<pre>13: Yield
 </pre>
 </div>
 </div>
@@ -13211,7 +13211,7 @@ rkJggg==
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Stop
+<pre>14: Stop
 </pre>
 </div>
 </div>
@@ -13291,7 +13291,7 @@ C9IcQRakmdkFaWZ2QZqZXZBmZhekmdkFaWZ2QZqZXZD+D7Ml/JYiCxAYAAAAAElFTkSuQmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>No vehicles
+<pre>15: No vehicles
 </pre>
 </div>
 </div>
@@ -13376,7 +13376,7 @@ REzEHhE/AxUS05lpIhVjAAAAAElFTkSuQmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Vehicles over 3.5 metric tons prohibited
+<pre>16: Vehicles over 3.5 metric tons prohibited
 </pre>
 </div>
 </div>
@@ -13476,7 +13476,7 @@ MlV2jjJVdo4yVXaOMlV2jjJVdo7yf90cSJVk1JLjAAAAAElFTkSuQmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>No entry
+<pre>17: No entry
 </pre>
 </div>
 </div>
@@ -13569,7 +13569,7 @@ DxJ7gEASdljeAAAAAElFTkSuQmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>General caution
+<pre>18: General caution
 </pre>
 </div>
 </div>
@@ -13668,7 +13668,7 @@ QmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Dangerous curve to the left
+<pre>19: Dangerous curve to the left
 </pre>
 </div>
 </div>
@@ -13739,7 +13739,7 @@ uyMWYnfE/wHECgXNh3BswAAAAABJRU5ErkJggg==
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Dangerous curve to the right
+<pre>20: Dangerous curve to the right
 </pre>
 </div>
 </div>
@@ -13814,7 +13814,7 @@ yIqYPMiKmIhdEROxK2IidkVMxK6IidgVMRG7IiZiV8T/AHew14Zj0k3EAAAAAElFTkSuQmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Double curve
+<pre>21: Double curve
 </pre>
 </div>
 </div>
@@ -13903,7 +13903,7 @@ x+mnEn/2Uc7arpgOytT9iohcwkTeVeD3jtPJcAVZIQ1XkBXSkNkV0pDZFdKQ2RXSkNkV0pDZFdKQ
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Bumpy road
+<pre>22: Bumpy road
 </pre>
 </div>
 </div>
@@ -13991,7 +13991,7 @@ AABJRU5ErkJggg==
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Slippery road
+<pre>23: Slippery road
 </pre>
 </div>
 </div>
@@ -14061,7 +14061,7 @@ SUVORK5CYII=
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Road narrows on the right
+<pre>24: Road narrows on the right
 </pre>
 </div>
 </div>
@@ -14153,7 +14153,7 @@ DdKY2Q3SmNkN0pjZDdKY2Q3S/wOcmErGVQoFgQAAAABJRU5ErkJggg==
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Road work
+<pre>25: Road work
 </pre>
 </div>
 </div>
@@ -14243,7 +14243,7 @@ gbHDh4a+kP1Yv2v7ozJ1c0q0w68C37vMPL34sx/mXds9w0dl6n5RRD6Psbz/BX73MpNsLcgeYWtB
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Traffic signals
+<pre>26: Traffic signals
 </pre>
 </div>
 </div>
@@ -14338,7 +14338,7 @@ Mw+yRpoxu0aaMbtGmjG7Rpoxu0aaMbtGmjG7Rpoxu0b6f/LzWvcPq/lXAAAAAElFTkSuQmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Pedestrians
+<pre>27: Pedestrians
 </pre>
 </div>
 </div>
@@ -14440,7 +14440,7 @@ m0AULBNI7TYAAAAASUVORK5CYII=
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Children crossing
+<pre>28: Children crossing
 </pre>
 </div>
 </div>
@@ -14516,7 +14516,7 @@ zmQAAAAASUVORK5CYII=
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Bicycles crossing
+<pre>29: Bicycles crossing
 </pre>
 </div>
 </div>
@@ -14611,7 +14611,7 @@ a2V3KP8PjcGxwkUcGgMAAAAASUVORK5CYII=
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Beware of ice/snow
+<pre>30: Beware of ice/snow
 </pre>
 </div>
 </div>
@@ -14695,7 +14695,7 @@ yu5RBmX3KIOye5RB2T3KzwByNz+WP7l7EQAAAABJRU5ErkJggg==
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Wild animals crossing
+<pre>31: Wild animals crossing
 </pre>
 </div>
 </div>
@@ -14770,7 +14770,7 @@ AElFTkSuQmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>End of all speed and passing limits
+<pre>32: End of all speed and passing limits
 </pre>
 </div>
 </div>
@@ -14858,7 +14858,7 @@ FmnO7BZpzuwW6f8A5b3u+goUnFMAAAAASUVORK5CYII=
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Turn right ahead
+<pre>33: Turn right ahead
 </pre>
 </div>
 </div>
@@ -14940,7 +14940,7 @@ AAAASUVORK5CYII=
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Turn left ahead
+<pre>34: Turn left ahead
 </pre>
 </div>
 </div>
@@ -15036,7 +15036,7 @@ WRVU0LgAAAAASUVORK5CYII=
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Ahead only
+<pre>35: Ahead only
 </pre>
 </div>
 </div>
@@ -15127,7 +15127,7 @@ NNDBAqQAAAAASUVORK5CYII=
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Go straight or right
+<pre>36: Go straight or right
 </pre>
 </div>
 </div>
@@ -15217,7 +15217,7 @@ AElFTkSuQmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Go straight or left
+<pre>37: Go straight or left
 </pre>
 </div>
 </div>
@@ -15300,7 +15300,7 @@ hDQze0KamT0h/R9TVTdXDBLG9AAAAABJRU5ErkJggg==
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Keep right
+<pre>38: Keep right
 </pre>
 </div>
 </div>
@@ -15372,7 +15372,7 @@ YII=
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Keep left
+<pre>39: Keep left
 </pre>
 </div>
 </div>
@@ -15463,7 +15463,7 @@ nmR2ScQAAAAASUVORK5CYII=
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Roundabout mandatory
+<pre>40: Roundabout mandatory
 </pre>
 </div>
 </div>
@@ -15570,7 +15570,7 @@ pBqzI6T/BXZoHLZMGf2zAAAAAElFTkSuQmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>End of no passing
+<pre>41: End of no passing
 </pre>
 </div>
 </div>
@@ -15653,7 +15653,7 @@ B5SdsgeUnbIHlJ2yB5SdsgeUnbIHlJ2yB5SdsgeU/wdyPVD7JdiZAgAAAABJRU5ErkJggg==
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>End of no passing by vehicles over 3.5 metric tons
+<pre>42: End of no passing by vehicles over 3.5 metric tons
 </pre>
 </div>
 </div>
@@ -15857,185 +15857,6 @@ NorwQv78GJQAAAAASUVORK5CYII=
 <pre>Distribution of images in validation set
 </pre>
 </div>
-</div>
-
-<div class="output_area">
-<div class="prompt"></div>
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-G1EoIQAAAABJRU5ErkJggg==
-"
->
-</div>
-
-</div>
-
-<div class="output_area">
-<div class="prompt"></div>
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Distribution of images in test set
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-<div class="prompt"></div>
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-XpI6938EavnHAPx0bAAAAABJRU5ErkJggg==
-"
->
-</div>
-
 </div>
 
 </div>
@@ -17025,7 +16846,7 @@ M6QGszOkBrMzpAazM6T/B/5mP3E/DS/ZAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Run the predictions here and use the model to output the prediction for each image.</span>
@@ -17043,8 +16864,11 @@ M6QGszOkBrMzpAazM6T/B/5mP3E/DS/ZAAAAAElFTkSuQmCC
     <span class="n">saver</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="n">sess</span><span class="p">,</span> <span class="s1">&#39;./taynn&#39;</span><span class="p">)</span>
     <span class="n">classifications</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">logits</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">keep_prob</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">})</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predictions: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">classifications</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Actual classes: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y_test</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">theclazz</span><span class="p">(</span><span class="n">clazz</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">signnames</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">signnames</span><span class="p">[</span><span class="s1">&#39;ClassId&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">clazz</span><span class="p">][</span><span class="s1">&#39;SignName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">clazz</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Predictions: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">theclazz</span><span class="p">,</span> <span class="n">classifications</span><span class="p">))))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Actual classes: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">theclazz</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))))</span>
 </pre></div>
 
 </div>
@@ -17059,8 +16883,8 @@ M6QGszOkBrMzpAazM6T/B/5mP3E/DS/ZAAAAAElFTkSuQmCC
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predictions: [18 12 29 25 38]
-Actual classes: [18 12 22 25 38]
+<pre>Predictions: [&#39;General caution&#39;, &#39;Priority road&#39;, &#39;Bicycles crossing&#39;, &#39;Road work&#39;, &#39;Keep right&#39;]
+Actual classes: [&#39;General caution&#39;, &#39;Priority road&#39;, &#39;Bumpy road&#39;, &#39;Road work&#39;, &#39;Keep right&#39;]
 </pre>
 </div>
 </div>
