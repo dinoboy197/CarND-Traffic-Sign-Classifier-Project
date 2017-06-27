@@ -51,9 +51,9 @@ Note how in all of the datasets, some of the classes (1-5,7-10,12-13,38) have a 
 
 ![Test data instance class distribution](writeup_resources/test_distribution.png)
 
-###Design and Test a Model Architecture
+### Design and Test a Model Architecture
 
-####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
+#### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
 
 As a first step, I decided to convert the images to grayscale to reduce the dimensionality of the problem that the classifier needed to learn. Given the small number of training examples, I was concerned that the extra dimensionality in representing colors would overwhelm classifier and it would not fit a robust model. Grayscale was also used successfully in [my previous lane finding project](https://github.com/dinoboy197/CarND-LaneLines-P1), and given the success of finding detail in a low-resolution grayscale image I thought I would have similar success in this project.
 
@@ -84,13 +84,13 @@ My final model consisted of the following layers:
 | Dropout				| 70%											|
 | Fully connected		| 400 input neurons, 400 output neurons        	|
 | RELU					|												|
-| Dropout				| 70%											|
+| Dropout				| 50% keep fraction											|
 | Fully connected		| 400 input neurons, 43 output neurons        	|
 | 
 | Output - Softmax		| Output           								|
 
 
-####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 To train the model, I:
 * Used a loss function which [reduced the mean of the softmax cross entropy between the output and the validation labels](https://www.tensorflow.org/api_docs/python/tf/nn/softmax_cross_entropy_with_logits)
@@ -98,25 +98,23 @@ To train the model, I:
 * Optimized the weights and biases for ecah of the layers using the [Adam algorithm](https://www.tensorflow.org/api_docs/python/tf/train/AdamOptimizer), with an initial learning rate of 0.0005 (the Adam optimizer dynamically adjusts the effective learning rate over time)
 * used mini-batching of 128 training instances looped over 16 complete epochs of training and weight optimization until the accuracy was above 93.5%
 
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
-
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+* training set accuracy of 97.0%
+* validation set accuracy of 93.7%
+* test set accuracy of 90.5%
 
 If a well known architecture was chosen:
 * What architecture was chosen?
 * Why did you believe it would be relevant to the traffic sign application?
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
+
+I started with the classic [LeNet-5 image classification architecture](https://en.wikipedia.org/wiki/Convolutional_neural_network#LeNet-5), as it is a canonical and well-understood image classification neural net architecture for grayscale image classification. This seemed like an obvious starting point to classify small (32x32 pixel) grayscale images with a limited set of output classes (43). I used the architecture from previous Udacity lessons as a starting point.
+
+This was augmented by studying the [Alexnet image processing architecture](https://en.wikipedia.org/wiki/AlexNet), as it is also well-understood and made sigificant performance improvements on LeNet. Some modifications include using 50% dropout layers after every fully connected layer to prevent overfitting on training data, making the fully connected layers not reduce dimensionality (input and output dimensions are the same until the final output layer), and starting with initial positive values for layer bias terms rather than zero (since ReLU is used as an activation function, and I did not want to more connections to drop out than absolutely necessary).
+
+Training set accuracy shows that the model is fitting to the training data well; perhaps too well, as a 97% accuracy is quite high. Luckily, the difference in performance between the validation and training sets (delta of 3.3%) shows that the model is not overfitting too greatly, which is good. Test set accuracy of 90.5% indicates that on completely unseen data in the real world, this classifier would classify slightly better than nine of out ten traffic signs correctly, which is interesting academically but surely would be a problem for a true self-driving car (an incorrectly classified traffic sign could prove disasterous).
 
 ###Test a Model on New Images
 
