@@ -167,56 +167,56 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 
 The code for making predictions on my final model is located in one of the last cells of the Ipython notebook.
 
-For the first image, the model is most sure that this is a General Caution sign (probability of 0.25), and the image does contain a General Caution sign. The top five soft max probabilities were
+For the first image, the model is almost completely sure that this is a General Caution sign (probability of 0.99), and the image does contain a General Caution sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
-| .25         			| General Caution   							|
-| .20     				| Pedestrians  				            	   |
-| .18					| Traffic Signals								|
-| .14	      			| Road Narrows on the Right		 				|
-| .13				    | Right-of-way at the next intersection			|
+| .99         			| General Caution   							|
+| .01     				| Pedestrians  				            	   |
+| .00					| Traffic Signals								|
+| .00	      			| Road Narrows on the Right		 				|
+| .00				    | Right-of-way at the next intersection			|
 
 
-For the second image, the model is most sure that this is a Priority Road sign (probability of 0.10), and the image does contain a Priority Road sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					|
-|:---------------------:|:---------------------------------------------:|
-| .10         			| Priority Road   			  		      		|
-| .06     				| Yield 								        |
-| .06					| No Vehicles						       		|
-| .05	      			| No Passing		 			               	|
-| .04				    | Ahead Only		                         	|
-
-For the third image, the model is relatively sure that this is a Bicycles Crossing sign (probability of 0.15); however, the image contains a Bumpy Road sign. Note that Bumpy Road is the second highest softmax probability. The top five soft max probabilities were
+For the second image, the model is almost sure that this is a Priority Road sign (probability of 0.95), and the image does contain a Priority Road sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
-| .15         			| Bicycles Crossing   							|
-| .11     				| Bumpy Road 								    |
-| .11					| Dangerous Curve to the right					|
-| .09	      			| Road narrows on the right		 				|
-| .09				    | Road work			                             |
+| .95         			| Priority Road   			  		      		|
+| .02     				| Yield 								        |
+| .02   				| No Vehicles						       		|
+| .01	      			| No Passing		 			               	|
+| .00				    | Ahead Only		                         	|
 
-For the fourth image, the model is relatively sure that this is a Road Work sign (probability of 0.22), and the image does contain a Road work sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					|
-|:---------------------:|:---------------------------------------------:|
-| .22         			| Road work   						           	|
-| .16     				| Bumpy road 								    |
-| .12					| Bicycle crossing								|
-| .10	      			| Road Narrows on the Right		 				|
-| .09				    | Slippery Road                            		|
-
-For the fifth image, the model is most sure that this is a Keep Right sign (probability of 0.12), and the image does contain a Keep Right sign. The top five soft max probabilities were
+For the third image, the model is almost sure that this is a Bicycles Crossing sign (probability of 0.95); however, the image contains a Bumpy Road sign. Note that Bumpy Road is the second highest softmax probability, but it much less confident about this prediction. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
-| .12         			| Keep Right   						          	|
-| .12     				| Speed Limit (30km/h) 						    |
-| .11					| Roundabout Manadatory							|
-| .07	      			| Speed Limit (50km/h)		 			     	|
-| .07				    | Priority Road                        			|
+| .95         			| Bicycles Crossing   							|
+| .03     				| Bumpy Road 								    |
+| .02					| Dangerous Curve to the right					|
+| .00	      			| Road narrows on the right		 				|
+| .00				    | Road work			                             |
+
+For the fourth image, the model is almost completely sure that this is a Road Work sign (probability of 0.99), and the image does contain a Road work sign. The top five soft max probabilities were
+
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .99         			| Road work   						           	|
+| .00     				| Bumpy road 								    |
+| .00					| Bicycle crossing								|
+| .00	      			| Road Narrows on the Right		 				|
+| .00				    | Slippery Road                            		|
+
+For the fifth image, the model is most confident that this is a Keep Right sign (probability of 0.46), and the image does contain a Keep Right sign. Note that the "second place" probability for Speed Limit (30km/h) is not far behind. The top five soft max probabilities were
+
+| Probability         	|     Prediction	        					|
+|:---------------------:|:---------------------------------------------:|
+| .46         			| Keep Right   						          	|
+| .35     				| Speed Limit (30km/h) 						    |
+| .18					| Roundabout Manadatory							|
+| .00	      			| Speed Limit (50km/h)		 			     	|
+| .00				    | Priority Road                        			|
 
 
 
