@@ -8,7 +8,6 @@ When operating on roadways, autonomous vehicles need to be able to identify traf
 
 This repository contains a codebase which uses deep neural networks and convolutional neural networks to classify traffic signs. The codebase trains and validates a neural network model so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). Additionally, a study of model performance on images of German traffic signs from the internet at large is included.
 
-The goals / steps of this project are to:
 * Load the data set (see below for links to the project data set)
 * Explore, summarize and visualize the data set
 * Design, train and test a model architecture
@@ -37,7 +36,7 @@ The goals / steps of this project are to:
 
 ## Data Set Summary & Exploration
 
-### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+### Dataset summary
 
 I used the pandas library to calculate summary statistics of the traffic signs data set:
 
@@ -47,7 +46,7 @@ I used the pandas library to calculate summary statistics of the traffic signs d
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
 
-### 2. Include an exploratory visualization of the dataset.
+### Exploratory visualization of the dataset.
 
 Here is an exploratory visualization of the data set. It is a bar chart showing the distribution of the instance classes in the training, validation, and test datasets.
 
@@ -65,9 +64,9 @@ Note how in all of the datasets, some of the classes (1-5,7-10,12-13,38) have a 
 
 ![Test data instance class distribution](writeup_resources/test_distribution.png)
 
-## Design and Test a Model Architecture
+## Design and Testing of model architecture
 
-### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
+### Image data preprocessing
 
 As a first step, I decided to convert the images to grayscale to reduce the dimensionality of the problem that the classifier needed to learn. Given the small number of training examples (< 100k), I was concerned that the extra dimensionality in representing colors would overwhelm the optimizer and it would not fit a robust model. Grayscale was also used in [my previous lane finding project](https://github.com/dinoboy197/CarND-LaneLines-P1), and given the success of finding detail in a low-resolution grayscale image I thought I would have similar success in this project.
 
@@ -80,9 +79,9 @@ As a last step, I normalized the image data to have mean zero and low standard d
 Even though I noticed a class imbalance in the training data set, I declined to augment the training set with more data as I was curious as to find out how biased the final classifier would become during validation.
 
 
-### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+### Final neural network architecture
 
-My final model consisted of the following layers:
+My final model consists of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -104,7 +103,7 @@ My final model consisted of the following layers:
 | Output - Softmax		| Output           								|
 
 
-### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+### Model training
 
 To train the model, I:
 * Used a loss function which [reduced the mean of the softmax cross entropy between the output and the validation labels](https://www.tensorflow.org/api_docs/python/tf/nn/softmax_cross_entropy_with_logits)
@@ -112,7 +111,7 @@ To train the model, I:
 * Optimized the weights and biases for each of the layers using the [Adam algorithm](https://www.tensorflow.org/api_docs/python/tf/train/AdamOptimizer), with an initial learning rate of 0.0005 (the Adam optimizer dynamically adjusts the effective learning rate over time)
 * used mini-batching of 128 training instances looped with a maximum of 200 epochs of training and weight optimization until the accuracy was above 93.5%. 93.7% was hit after 16 epochs, at which point the training loop completed.
 
-### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+### Improving validation set accuracy
 
 My final model results were:
 * training set accuracy of 97.0%
@@ -125,9 +124,9 @@ This was augmented by studying the [Alexnet image processing architecture](https
 
 Training set accuracy shows that the model is fitting to the training data well; perhaps too well, as a 97% accuracy is quite high. Luckily, the difference in performance between the validation and training sets (delta of 3.3%) shows that the model is not overfitting too greatly, which is good. Test set accuracy of 90.5% indicates that on completely unseen data in the real world, this classifier would classify slightly better than nine of out ten traffic signs correctly, which is interesting academically but surely would be a problem for a true self-driving car (as even one incorrectly classified traffic sign could prove disasterous).
 
-### Test a Model on New Images
+### Validation with images in the wild
 
-#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### Sample images
 
 Here are five German traffic signs that I found on the web:
 
@@ -162,7 +161,7 @@ This image is likely to be difficult to classify, being captured at a non-perpen
 This image should be relatively easy to classify; it has some background noise but the image itself is clear except for some clipping at the bottom of the circle.
 
 
-#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set.
+#### Comparision of predictions from original set and internet images
 
 Here are the results of the prediction:
 
@@ -177,7 +176,7 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. Due to the limited number of test examples in my set of 5, the accuracy of 80% is lower than the original test set accuracy of 90.5%.
 
-#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability.
+#### Softmax probabilities
 
 The code for making predictions on my final model is located in one of the last cells of the Ipython notebook.
 
