@@ -32,7 +32,7 @@ This repository contains a codebase which uses deep neural networks and convolut
 
 ### Dataset summary
 
-I used the pandas library to calculate summary statistics of the traffic signs data set:
+The pandas library is used to calculate summary statistics of the traffic signs data set:
 
 * The size of training set is 34799
 * The size of the validation set is 4410
@@ -62,7 +62,7 @@ Note how in all of the datasets, some of the classes (1-5,7-10,12-13,38) have a 
 
 ### Image data preprocessing
 
-As a first step, I convert all images to grayscale to reduce the dimensionality of the problem that the classifier needs to learn. Given the small number of training examples (< 100k), the extra dimensionality in representing colors might overwhelm the optimizer and it would not fit a robust model. Grayscale was also used in [my previous lane finding project](https://github.com/dinoboy197/CarND-LaneLines-P1), and given the success of finding detail in a low-resolution grayscale image similar success here is expected.
+As a first step, all images are converted to grayscale to reduce the dimensionality of the problem that the classifier needs to learn. Given the small number of training examples (< 100k), the extra dimensionality in representing colors might overwhelm the optimizer and it would not fit a robust model. Grayscale was also used in [my previous lane finding project](https://github.com/dinoboy197/CarND-LaneLines-P1), and given the success of finding detail in a low-resolution grayscale image similar success here is expected.
 
 Here is an example of a traffic sign image before and after grayscaling.
 
@@ -79,7 +79,7 @@ The neural network model consists of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x1 grayscale image   							| 
+| Input         		| 32x32x1 grayscale image   					| 
 | Convolution 5x5     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 				    |
@@ -93,7 +93,6 @@ The neural network model consists of the following layers:
 | RELU					|												|
 | Dropout				| 50% keep fraction								|
 | Fully connected		| 400 input neurons, 43 output neurons        	|
-| 
 | Output - Softmax		| Output           								|
 
 
@@ -206,7 +205,7 @@ For the third image, the model is almost sure that this is a Bicycles Crossing s
 | .00	      			| Road narrows on the right		 				|
 | .00				    | Road work			                             |
 
-For the fourth image, the model is almost completely sure that this is a Road Work sign (probability of 0.99), and the image does contain a Road work sign. The top five soft max probabilities waere
+For the fourth image, the model is almost completely sure that this is a Road Work sign (probability of 0.99), and the image does contain a Road work sign. The top five soft max probabilities are
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
@@ -216,7 +215,7 @@ For the fourth image, the model is almost completely sure that this is a Road Wo
 | .00	      			| Road Narrows on the Right		 				|
 | .00				    | Slippery Road                            		|
 
-For the fifth image, the model is most confident that this is a Keep Right sign (probability of 0.46), and the image does contain a Keep Right sign. Note that the "second place" probability for Speed Limit (30km/h) is not far behind. The top five soft max probabilities were
+For the fifth image, the model is most confident that this is a Keep Right sign (probability of 0.46), and the image does contain a Keep Right sign. Note that the "second place" probability for Speed Limit (30km/h) is not far behind. The top five soft max probabilities are
 
 | Probability         	|     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
@@ -229,9 +228,9 @@ For the fifth image, the model is most confident that this is a Keep Right sign 
 
 ## Running code from this repository
 
-Running the code in this  requires that the Udacity CarND Term1 Starter Kit be properly installed. Click [here](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) for the details.
+Running the code in this repository requires that the Udacity CarND Term1 Starter Kit to be properly installed. Click [here](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) for the details.
 
-Once the starter kit is installed and activated, you may:
+Once the starter kit is installed and activated, you may run:
 
 ```sh
 jupyter notebook Traffic_Sign_Classifier.ipynb
